@@ -231,6 +231,9 @@ export default defineComponent({
                 confirmButton: "btn fw-bold btn-light-danger",
               },
             });
+
+            // temporary bypass credentials
+            router.push({ name: "dashboard" });
           });
 
         //Deactivate indicator

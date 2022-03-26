@@ -37,7 +37,8 @@ export default class AuthModule extends VuexModule implements UserAuthInfo {
    * @returns boolean
    */
   get isUserAuthenticated(): boolean {
-    return this.isAuthenticated;
+    return true;
+    // return this.isAuthenticated;
   }
 
   /**
@@ -127,27 +128,27 @@ export default class AuthModule extends VuexModule implements UserAuthInfo {
       });
   }
 
-  @Action
-  [Actions.VERIFY_AUTH]() {
-    if (JwtService.getToken()) {
-      ApiService.setHeader();
-      const params = {
-        params: {
-          token: JwtService.getToken(),
-        },
-      };
-      ApiService.query("verify_token", params as AxiosRequestConfig)
-        .then(({ data }) => {
-          this.context.commit(Mutations.SET_AUTH, data);
-        })
-        .catch(({ response }) => {
-          this.context.commit(Mutations.SET_ERROR, response.data.errors);
-          this.context.commit(Mutations.PURGE_AUTH);
-        });
-    } else {
-      this.context.commit(Mutations.PURGE_AUTH);
-    }
-  }
+  // @Action
+  // [Actions.VERIFY_AUTH]() {
+  //   if (JwtService.getToken()) {
+  //     ApiService.setHeader();
+  //     const params = {
+  //       params: {
+  //         token: JwtService.getToken(),
+  //       },
+  //     };
+  //     ApiService.query("verify_token", params as AxiosRequestConfig)
+  //       .then(({ data }) => {
+  //         this.context.commit(Mutations.SET_AUTH, data);
+  //       })
+  //       .catch(({ response }) => {
+  //         this.context.commit(Mutations.SET_ERROR, response.data.errors);
+  //         this.context.commit(Mutations.PURGE_AUTH);
+  //       });
+  //   } else {
+  //     this.context.commit(Mutations.PURGE_AUTH);
+  //   }
+  // }
 
   // @Action
   // [Actions.UPDATE_USER](payload) {

@@ -15,15 +15,20 @@ import ApiService from "@/core/services/ApiService";
 import { initApexCharts } from "@/core/plugins/apexcharts";
 import { initInlineSvg } from "@/core/plugins/inline-svg";
 import { initVeeValidate } from "@/core/plugins/vee-validate";
+import { networkService } from "@/core/services/NetworkService";
+import axios from "axios";
+import VueAxios from "vue-axios"
 
 import "@/core/plugins/prismjs";
 import "bootstrap";
+networkService();
 
 const app = createApp(App);
 
 app.use(store);
 app.use(router);
 app.use(ElementPlus);
+app.use(VueAxios,axios);
 
 ApiService.init(app);
 initApexCharts(app);

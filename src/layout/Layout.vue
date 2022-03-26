@@ -112,10 +112,10 @@ export default defineComponent({
     });
 
     onMounted(() => {
-      //check if current user is authenticated
-      if (!store.getters.isUserAuthenticated) {
-        router.push({ name: "sign-in" });
-      }
+      //check if current user is authenticated ===============commented temporary
+      // if (!store.getters.isUserAuthenticated) {
+      //   router.push({ name: "sign-in" });
+      // }
 
       nextTick(() => {
         reinitializeComponents();
@@ -132,10 +132,10 @@ export default defineComponent({
       () => {
         MenuComponent.hideDropdowns(undefined);
 
-        // check if current user is authenticated
-        if (!store.getters.isUserAuthenticated) {
-          router.push({ name: "sign-in" });
-        }
+        // check if current user is authenticated ======= removed temporary
+        // if (!store.getters.isUserAuthenticated) {
+        //   router.push({ name: "sign-in" });
+        // }
 
         removeModalBackdrop();
         nextTick(() => {

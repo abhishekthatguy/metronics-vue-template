@@ -113,6 +113,23 @@
                                 >
                               </div>
                             </a>
+                             <a
+                              href="#"
+                              class="d-flex text-dark text-hover-primary align-items-center mb-5"
+                            >
+                              <div class="symbol symbol-40px me-4">
+                                <img src="media/avatars/150-1.jpg" alt="" />
+                              </div>
+
+                              <div
+                                class="d-flex flex-column justify-content-start fw-bold"
+                              >
+                                <span class="fs-6 fw-bold">Critical Illness</span>
+                                <span class="fs-7 fw-bold text-muted"
+                                  >Get Quotes for CriticalIllness</span
+                                >
+                              </div>
+                            </a>
 
                             <a
                               href="#"
